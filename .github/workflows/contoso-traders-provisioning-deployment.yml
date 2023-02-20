@@ -261,6 +261,7 @@ jobs:
           CARTS_API_ENDPOINT: ${{ steps.get-cartsApiEndpoint.outputs.cartsApiEndpoint }}
           PRODUCTS_API_ENDPOINT: ${{ steps.get-productsApiEndpoint.outputs.productsApiEndpoint }}
       - name: npm install
+        run: sudo apt-get update && sudo apt-get install openssl
         run: npm install 14
         working-directory: src/ContosoTraders.Ui.Website
       - name: npm run build
